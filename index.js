@@ -1,6 +1,6 @@
 var result;
 var dice;
-var sides;
+var sides = 6;
 var i;
 var total;
 var content;
@@ -20,6 +20,12 @@ global.Brikkit.on('chat', evt => {
 			}
 			if(sides > 1000) {
 				sides = 1000;
+			}
+			if(isNaN(sides) == true) {
+				sides = 6
+			}
+			if(dice == 0) {
+				dice = 1
 			}
 			for (i = 0; i < dice;i++) {
 				roll = Math.floor(Math.random() * sides) + 1;
